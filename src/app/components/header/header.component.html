@@ -24,13 +24,20 @@
 
                         <ul class="nav-menu nav-menu-social align-to-right">
 
-
-
+                            @if (userService.isLoggedIn()) {
+                            <li class="add-listing dark-bg">
+                                <a routerLink="/client">
+                                    <i class="ti-user mr-1"></i> My Account
+                                </a>
+                            </li>
+                            }@else {
                             <li class="add-listing dark-bg">
                                 <a routerLink="/login">
                                     <i class="ti-user mr-1"></i> Sign in
                                 </a>
                             </li>
+                            }
+
 
 
                         </ul>
