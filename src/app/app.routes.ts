@@ -8,7 +8,7 @@ export const routes: Routes = [
     { path: 'about', title: 'About', loadComponent: () => import('./components/about/about.component').then(m => m.AboutComponent) },
     { path: 'faq', title: 'FAQ', loadComponent: () => import('./components/faq/faq.component').then(m => m.FaqComponent) },
     { path: 'services', title: 'Services', loadComponent: () => import('./components/services/services.component').then(m => m.ServicesComponent) },
-    { path: 'detail-services/:id', title: 'Detail Services', loadComponent: () => import('./components/detail-services/detail-services.component').then(m => m.DetailServicesComponent) },
+    { path: 'detail-services/:id', canActivate: [authGuard] , title: 'Detail Services', loadComponent: () => import('./components/detail-services/detail-services.component').then(m => m.DetailServicesComponent) },
 
     { path: 'login', canActivate: [loginGuard], title: 'Login', loadComponent: () => import('./components/login/login.component').then(m => m.LoginComponent) },
     { path: 'register', canActivate: [loginGuard], title: 'Register', loadComponent: () => import('./components/register/register.component').then(m => m.RegisterComponent) },
